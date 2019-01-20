@@ -1,0 +1,32 @@
+#call-to-action
+	div
+		h1 Pre-order your Minion!
+
+		== form_for :form, url: new_form_path, :html => {:class => 'row justify-content-between'} do |f|
+			label.col-3.minion
+				== f.check_box :bob
+				== image_tag("minions/minion-bob.jpg", :alt => "Bob")
+	
+			label.col-3.minion
+				== f.check_box :kevin
+				== image_tag("minions/minion-kevin.jpg", :alt => "Kevin")
+	
+			label.col-3.minion
+				== f.check_box :stuart
+				== image_tag("minions/minion-stuart.jpg", :alt => "Stuart")
+
+			== submit_tag 'Pre-order now!', :class => 'btn btn-lg btn-block btn-primary'
+
+.see-more
+	span.fas.fa-angle-down
+
+#user-list
+	h3 Order now and don't lose time! They're already having fun!
+	- @forms.each do |form|
+		- @dateTime = form.created_at.to_s.split(" ")
+		- @date = form.created_at.strftime("%B #{form.created_at.day.ordinalize}, %Y")
+		- @time = @dateTime[1]
+
+		p #{form.name} - #{@date} at #{@time}
+
+.alert.alert-danger You must choose at least one minion to continue

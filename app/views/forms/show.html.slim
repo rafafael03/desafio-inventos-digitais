@@ -1,0 +1,22 @@
+#congrats
+	h1 Congrats #{@form.name.split(" ")[0]}!
+
+	#minions.row.justify-content-between
+		- if @form.bob
+			.col-2
+				== image_tag("minions/minion-bob.jpg", :alt => "Bob")
+		- if @form.kevin
+			.col-2
+				== image_tag("minions/minion-kevin.jpg", :alt => "Kevin")
+		- if @form.stuart
+			.col-2
+				== image_tag("minions/minion-stuart.jpg", :alt => "Stuart")
+
+	#final-message
+		p You  just guaranteed your Minion!
+		p
+			Now you can relax.
+			br When everything to be ready to ship, we'll call you at #{@form.phone} and you will receive it at your home
+
+		- if !@form.message.empty?
+			p We won't forget your message. We really appreciate it. Thank you very much! ❤

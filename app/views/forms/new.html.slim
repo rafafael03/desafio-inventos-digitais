@@ -1,0 +1,44 @@
+#form-page
+	h1 You're almost done
+
+	- if @form.errors.any?
+		- @form.errors.full_messages.each do |msg|
+			.alert.alert-danger #{msg}
+
+	== form_for :form, url: forms_path do |f|
+		p
+			== f.label :name, 'Full name:'
+			br
+			== f.text_field(:name, {:class => 'form-control'})
+
+		p
+			== f.label :phone, 'Phone number:'
+			br
+			== f.text_field(:phone, {:class => 'form-control'})
+
+		p
+			== f.label :address, 'Address:'
+			br
+			== f.text_field(:address, {:class => 'form-control'})
+
+		p
+			== f.label :number, 'Number'
+			br
+			== f.text_field(:number, {:class => 'form-control'})
+
+		p
+			== f.label :zip_code, 'Zip code:'
+			br
+			== f.text_field(:zip_code, {:class => 'form-control'})
+
+		p
+			== f.label :message, 'Let a message for us:'
+			br
+			== f.text_area(:message, {:class => 'form-control'})
+
+		.minions
+			== f.check_box :bob
+			== f.check_box :kevin
+			== f.check_box :stuart
+
+		== f.submit('Save you minion now!', {:class => 'btn btn-lg btn-block btn-primary'})
