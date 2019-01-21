@@ -34,6 +34,17 @@ Rails.application.configure do
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
 
+  #SMTP
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 25,
+  domain:               'localhost:3000',
+  user_name:            'pre.order.minions@gmail.com',
+  password:             'inventosdigitais',
+  authentication:       'plain',
+  enable_starttls_auto: true }
+
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
