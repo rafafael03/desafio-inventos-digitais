@@ -1,0 +1,17 @@
+<h1>You just pre-ordered you Minions, <%= @form.name.split(" ")[0] %>!</h1>
+
+<p>
+  Check your informations:
+  <br>Phone number: <%= @form.phone %>
+  <br>Adress: <%= @form.address %>, <%= @form.number %> - <%= @form.zip_code %>
+  <br>Minions:
+  <% if @form.bob %>
+    <br>    * Bob
+  <% end %>
+  <% if @form.kevin %>
+    <br>    * Kevin
+  <% end %>
+  <% if @form.stuart %>
+    <br>    * Stuart
+  <% end %>
+</p>
