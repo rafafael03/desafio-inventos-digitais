@@ -15,7 +15,7 @@ class FormsController < ApplicationController
 		@form = Form.new(form_params)
 
 		if (@form.save)
-			MinionMailer.confirmation_email(@form).deliver
+			MinionMailer.confirmation_email(@form).deliver_now!
 			redirect_to @form
 		else
 			render 'new'
