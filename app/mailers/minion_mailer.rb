@@ -3,6 +3,6 @@ class MinionMailer < ApplicationMailer
 
 	def confirmation_email(form)
 		@form = form
-		mail(to: 'rafael-030497@hotmail.com', subject: 'Pre-order confirmation!')
+		mail(to: 'rayssa@inventosdigitais.com.br', subject: 'Pre-order confirmation!')
 	end
 end
